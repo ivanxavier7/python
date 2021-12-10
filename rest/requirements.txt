@@ -5,3 +5,4 @@ pip install flask_restfull
 pip3 install flask
 
 pip install typing-extensions
+pip install Flask-SQLAlchemy
