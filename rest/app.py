@@ -63,7 +63,7 @@ def create_item_in_store(name):
 
 
 # GET /store/<string:name>/item
-@app.route('/store/<string:name>')
+@app.route('/store/<string:name>/item')
 def get_items_in_store(name):
     for store in stores:
         if store['name'] == name:
