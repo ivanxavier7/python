@@ -1,5 +1,5 @@
 import { BrowserModule } from '@angular/platform-browser';
-import { NgModule } from '@angular/core';
+import { APP_INITIALIZER ,NgModule } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { HttpClientModule, HTTP_INTERCEPTORS, HttpClientXsrfModule } from '@angular/common/http';
 import { AppRoutingModule } from './app-routing.module';
@@ -16,6 +16,22 @@ import { LoansComponent } from './components/loans/loans.component';
 import { CardsComponent } from './components/cards/cards.component';
 import { XhrInterceptor } from './interceptors/app.request.interceptor';
 import { AuthActivateRouteGuard } from './routeguards/auth.routeguard';
+import { KeycloakAngularModule, KeycloakService } from 'keycloak-angular';
+
+function initializeKeycloak(keycloak: KeycloakService){
+  return () =>
+    keycloak.init({
+      config:{
+        url: 'http://localhost:',
+        realm: 'uap_rest_api',
+        clientId: 'bookstorepublicclient',
+      },
+      initOptions: {
+        pkceMethod: 'S256',
+        redirectUri: 'http://localhost:4200/dashboard'
+      },loadUserProfileAtStartUp: false
+    });
+}
 
 @NgModule({
   declarations: [
@@ -35,6 +51,7 @@ import { AuthActivateRouteGuard } from './routeguards/auth.routeguard';
     BrowserModule,
     AppRoutingModule,
     FormsModule,
+    KeycloakAngularModule,
     HttpClientModule,
     HttpClientXsrfModule.withOptions({
       cookieName: 'XSRF-TOKEN',
@@ -43,10 +60,11 @@ import { AuthActivateRouteGuard } from './routeguards/auth.routeguard';
   ],
   providers: [
     {
-      provide : HTTP_INTERCEPTORS,
-      useClass : XhrInterceptor,
-      multi : true
-    },AuthActivateRouteGuard
+      provide : APP_INITIALIZER,
+      useFactory : initializeKeycloak,
+      multi : true,
+      deps: [KeycloakService],
+    }
   ],
   bootstrap: [AppComponent]
 })
