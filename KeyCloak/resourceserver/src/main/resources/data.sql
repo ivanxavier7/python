@@ -15,7 +15,7 @@ CREATE TABLE `accounts` (
 );
 
 INSERT INTO `accounts` (`account_number`,`email`, `account_type`, `branch_address`, `create_dt`)
- VALUES (186576453,'accounts@eazybytes.com', 'Savings', '123 Main Street, New York', CURDATE());
+ VALUES (186576453,'sio_student@ua.pt', 'Savings', '123 Main Street, New York', CURDATE());
  
 CREATE TABLE `account_transactions` (
   `transaction_id` varchar(200) NOT NULL,
@@ -32,22 +32,22 @@ CREATE TABLE `account_transactions` (
 
  
 INSERT INTO `account_transactions` (`transaction_id`, `account_number`, `email`, `transaction_dt`, `transaction_summary`, `transaction_type`,`transaction_amt`, 
-`closing_balance`, `create_dt`)  VALUES (UUID(), 186576453, 'accounts@eazybytes.com', CURDATE()-7, 'Coffee Shop', 'Withdrawal', 30,34500,CURDATE()-7);
+`closing_balance`, `create_dt`)  VALUES (UUID(), 186576453, 'sio_student@ua.pt', CURDATE()-7, 'Coffee Shop', 'Withdrawal', 30,34500,CURDATE()-7);
 
 INSERT INTO `account_transactions` (`transaction_id`, `account_number`, `email`, `transaction_dt`, `transaction_summary`, `transaction_type`,`transaction_amt`, 
-`closing_balance`, `create_dt`)  VALUES (UUID(), 186576453, 'accounts@eazybytes.com', CURDATE()-6, 'Uber', 'Withdrawal', 100,34400,CURDATE()-6);
+`closing_balance`, `create_dt`)  VALUES (UUID(), 186576453, 'sio_student@ua.pt', CURDATE()-6, 'Uber', 'Withdrawal', 100,34400,CURDATE()-6);
 
 INSERT INTO `account_transactions` (`transaction_id`, `account_number`, `email`, `transaction_dt`, `transaction_summary`, `transaction_type`,`transaction_amt`, 
-`closing_balance`, `create_dt`)  VALUES (UUID(), 186576453, 'accounts@eazybytes.com', CURDATE()-5, 'Self Deposit', 'Deposit', 500,34900,CURDATE()-5);
+`closing_balance`, `create_dt`)  VALUES (UUID(), 186576453, 'sio_student@ua.pt', CURDATE()-5, 'Self Deposit', 'Deposit', 500,34900,CURDATE()-5);
 
 INSERT INTO `account_transactions` (`transaction_id`, `account_number`, `email`, `transaction_dt`, `transaction_summary`, `transaction_type`,`transaction_amt`, 
-`closing_balance`, `create_dt`)  VALUES (UUID(), 186576453, 'accounts@eazybytes.com', CURDATE()-4, 'Ebay', 'Withdrawal', 600,34300,CURDATE()-4);
+`closing_balance`, `create_dt`)  VALUES (UUID(), 186576453, 'sio_student@ua.pt', CURDATE()-4, 'Ebay', 'Withdrawal', 600,34300,CURDATE()-4);
 
 INSERT INTO `account_transactions` (`transaction_id`, `account_number`, `email`, `transaction_dt`, `transaction_summary`, `transaction_type`,`transaction_amt`, 
-`closing_balance`, `create_dt`)  VALUES (UUID(), 186576453, 'accounts@eazybytes.com', CURDATE()-2, 'OnlineTransfer', 'Deposit', 700,35000,CURDATE()-2);
+`closing_balance`, `create_dt`)  VALUES (UUID(), 186576453, 'sio_student@ua.pt', CURDATE()-2, 'OnlineTransfer', 'Deposit', 700,35000,CURDATE()-2);
 
 INSERT INTO `account_transactions` (`transaction_id`, `account_number`, `email`, `transaction_dt`, `transaction_summary`, `transaction_type`,`transaction_amt`, 
-`closing_balance`, `create_dt`)  VALUES (UUID(), 186576453, 'accounts@eazybytes.com', CURDATE()-1, 'Amazon.com', 'Withdrawal', 100,34900,CURDATE()-1);
+`closing_balance`, `create_dt`)  VALUES (UUID(), 186576453, 'sio_student@ua.pt', CURDATE()-1, 'Amazon.com', 'Withdrawal', 100,34900,CURDATE()-1);
 
 
 CREATE TABLE `loans` (
@@ -63,16 +63,28 @@ CREATE TABLE `loans` (
 );
 
 INSERT INTO `loans` ( `email`, `start_dt`, `loan_type`, `total_loan`, `amount_paid`, `outstanding_amount`, `create_dt`)
- VALUES ( 'accounts@eazybytes.com', '2020-10-13', 'Home', 200000, 50000, 150000, '2020-10-13');
+ VALUES ( 'sio_student@ua.pt', '2020-10-13', 'Home', 200000, 50000, 150000, '2020-10-13');
  
 INSERT INTO `loans` ( `email`, `start_dt`, `loan_type`, `total_loan`, `amount_paid`, `outstanding_amount`, `create_dt`)
- VALUES ( 'accounts@eazybytes.com', '2020-06-06', 'Vehicle', 40000, 10000, 30000, '2020-06-06');
+ VALUES ( 'sio_student@ua.pt', '2020-06-06', 'Vehicle', 40000, 10000, 30000, '2020-06-06');
  
 INSERT INTO `loans` ( `email`, `start_dt`, `loan_type`, `total_loan`, `amount_paid`, `outstanding_amount`, `create_dt`)
- VALUES ( 'accounts@eazybytes.com', '2018-02-14', 'Home', 50000, 10000, 40000, '2018-02-14');
+ VALUES ( 'sio_student@ua.pt', '2018-02-14', 'Home', 50000, 10000, 40000, '2018-02-14');
 
 INSERT INTO `loans` ( `email`, `start_dt`, `loan_type`, `total_loan`, `amount_paid`, `outstanding_amount`, `create_dt`)
- VALUES ( 'accounts@eazybytes.com', '2018-02-14', 'Personal', 10000, 3500, 6500, '2018-02-14');
+ VALUES ( 'sio_student@ua.pt', '2018-02-14', 'Personal', 10000, 3500, 6500, '2018-02-14');
+
+CREATE TABLE `books` (
+  `book_id` int NOT NULL AUTO_INCREMENT,
+  `name` varchar(26) NOT NULL,
+  `description` varchar(100) NOT NULL,
+  `author` varchar(26) NOT NULL,
+  `price` int NOT NULL,
+  `email` varchar(100)  NOT NULL,
+  PRIMARY KEY (`book_id`)
+);
+
+INSERT INTO `books` VALUES (1,'Book1','This is a simple description for the book','Author1',50,'sio_student@ua.pt'),(2,'Book2','This is a simple description for the book','Author2',50,'sio_student@ua.pt'),(3,'Book3','This is a simple description for the book','Author3',50,'sio_student@ua.pt');
 
 CREATE TABLE `cards` (
   `card_id` int NOT NULL AUTO_INCREMENT,
@@ -87,13 +99,13 @@ CREATE TABLE `cards` (
 );
 
 INSERT INTO `cards` (`card_number`, `email`, `card_type`, `total_limit`, `amount_used`, `available_amount`, `create_dt`)
- VALUES ('4565XXXX4656', 'accounts@eazybytes.com', 'Credit', 10000, 500, 9500, CURDATE());
+ VALUES ('4565XXXX4656', 'sio_student@ua.pt', 'Credit', 10000, 500, 9500, CURDATE());
 
 INSERT INTO `cards` (`card_number`, `email`, `card_type`, `total_limit`, `amount_used`, `available_amount`, `create_dt`)
- VALUES ('3455XXXX8673', 'accounts@eazybytes.com', 'Credit', 7500, 600, 6900, CURDATE());
+ VALUES ('3455XXXX8673', 'sio_student@ua.pt', 'Credit', 7500, 600, 6900, CURDATE());
  
 INSERT INTO `cards` (`card_number`, `email`, `card_type`, `total_limit`, `amount_used`, `available_amount`, `create_dt`)
- VALUES ('2359XXXX9346', 'accounts@eazybytes.com', 'Credit', 20000, 4000, 16000, CURDATE());
+ VALUES ('2359XXXX9346', 'sio_student@ua.pt', 'Credit', 20000, 4000, 16000, CURDATE());
  
 CREATE TABLE `notice_details` (
   `notice_id` int NOT NULL AUTO_INCREMENT,
