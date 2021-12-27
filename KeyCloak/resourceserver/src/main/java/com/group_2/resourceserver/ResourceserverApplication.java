@@ -8,9 +8,9 @@ import org.springframework.context.annotation.ComponentScans;
 import org.springframework.data.jpa.repository.config.EnableJpaRepositories;
 
 @SpringBootApplication
-@ComponentScans({ @ComponentScan("com.eazybytes.controller"), @ComponentScan("com.eazybytes.config")})
-@EnableJpaRepositories("com.eazybytes.repository")
-@EntityScan("com.eazybytes.model")
+@ComponentScans({ @ComponentScan("com.group_2.controller"), @ComponentScan("com.group_2.config")})
+@EnableJpaRepositories("com.group_2.repository")
+@EntityScan("com.group_2.model")
 public class ResourceserverApplication {
 
 	public static void main(String[] args) {
