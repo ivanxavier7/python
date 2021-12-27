@@ -25,7 +25,7 @@ const routes: Routes = [
   { path: 'myBalance', component: BalanceComponent, canActivate: [AuthKeyClockGuard],data: {
     roles: ['ADMIN']
   }},
-  { path: 'myLoans', component: LoansComponent, canActivate: [AuthKeyClockGuard],data: {
+  { path: 'myBooks', component: LoansComponent, canActivate: [AuthKeyClockGuard],data: {
     roles: ['USER','ADMIN']
   }},
   { path: 'myCards', component: CardsComponent, canActivate: [AuthKeyClockGuard],data: {
