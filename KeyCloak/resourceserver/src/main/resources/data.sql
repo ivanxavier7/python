@@ -15,7 +15,7 @@ CREATE TABLE `accounts` (
 );
 
 INSERT INTO `accounts` (`account_number`,`email`, `account_type`, `branch_address`, `create_dt`)
- VALUES (186576453,'sio_student@ua.pt', 'Savings', '123 Main Street, New York', CURDATE());
+ VALUES (186576453,'sio_student@ua.pt', 'Manager', 'Avenida João Jacinto de Magalhães, DETI-UA', CURDATE());
  
 CREATE TABLE `account_transactions` (
   `transaction_id` varchar(200) NOT NULL,
