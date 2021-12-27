@@ -33,7 +33,7 @@ export class HeaderComponent implements OnInit {
   }
 
   public logout() {
-    this.keycloak.logout();
+    this.keycloak.logout("http://localhost:4200/home");
   }
 
 }
