@@ -1,4 +1,4 @@
-package com.eazybytes.controller;
+package com.group_2.controller;
 
 import java.util.List;
 
@@ -7,9 +7,9 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RestController;
 
-import com.eazybytes.model.Cards;
-import com.eazybytes.model.Customer;
-import com.eazybytes.repository.CardsRepository;
+import com.group_2.model.Cards;
+import com.group_2.model.Customer;
+import com.group_2.repository.CardsRepository;
 
 @RestController
 public class CardsController {

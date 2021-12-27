@@ -1,4 +1,4 @@
-package com.eazybytes.model;
+package com.group_2.model;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;

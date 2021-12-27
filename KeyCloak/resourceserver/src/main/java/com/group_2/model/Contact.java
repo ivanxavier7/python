@@ -1,4 +1,4 @@
-package com.eazybytes.model;
+package com.group_2.model;
 
 import java.sql.Date;
 

@@ -1,4 +1,4 @@
-package com.eazybytes.controller;
+package com.group_2.controller;
 
 import java.sql.Date;
 import java.util.Random;
@@ -8,8 +8,8 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RestController;
 
-import com.eazybytes.model.Contact;
-import com.eazybytes.repository.ContactRepository;
+import com.group_2.model.Contact;
+import com.group_2.repository.ContactRepository;
 
 @RestController
 public class ContactController {

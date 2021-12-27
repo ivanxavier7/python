@@ -1,13 +1,13 @@
-package com.eazybytes.controller;
+package com.group_2.controller;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RestController;
 
-import com.eazybytes.model.Accounts;
-import com.eazybytes.model.Customer;
-import com.eazybytes.repository.AccountsRepository;
+import com.group_2.model.Accounts;
+import com.group_2.model.Customer;
+import com.group_2.repository.AccountsRepository;
 
 @RestController
 public class AccountController {

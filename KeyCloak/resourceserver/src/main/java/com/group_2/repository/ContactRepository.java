@@ -1,9 +1,9 @@
-package com.eazybytes.repository;
+package com.group_2.repository;
 
 import org.springframework.data.repository.CrudRepository;
 import org.springframework.stereotype.Repository;
 
-import com.eazybytes.model.Contact;
+import com.group_2.model.Contact;
 
 @Repository
 public interface ContactRepository extends CrudRepository<Contact, Long> {

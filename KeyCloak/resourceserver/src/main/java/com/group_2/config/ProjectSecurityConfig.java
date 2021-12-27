@@ -1,4 +1,4 @@
-package com.eazybytes.config;
+package com.group_2.config;
 
 import java.util.Collections;
 

@@ -1,6 +1,6 @@
-package com.eazybytes.repository;
+package com.group_2.repository;
 
-import com.eazybytes.model.Books;
+import com.group_2.model.Books;
 import org.springframework.data.repository.CrudRepository;
 import org.springframework.stereotype.Repository;
 

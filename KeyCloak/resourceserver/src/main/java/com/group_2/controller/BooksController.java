@@ -1,9 +1,8 @@
-package com.eazybytes.controller;
+package com.group_2.controller;
 
-import com.eazybytes.model.Accounts;
-import com.eazybytes.model.Books;
-import com.eazybytes.model.Customer;
-import com.eazybytes.repository.BooksRepository;
+import com.group_2.model.Books;
+import com.group_2.model.Customer;
+import com.group_2.repository.BooksRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;

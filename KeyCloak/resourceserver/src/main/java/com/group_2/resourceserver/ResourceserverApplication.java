@@ -1,4 +1,4 @@
-package com.eazybytes.resourceserver;
+package com.group_2.resourceserver;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
