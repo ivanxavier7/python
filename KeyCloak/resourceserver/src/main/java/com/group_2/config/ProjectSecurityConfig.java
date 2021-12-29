@@ -39,15 +39,7 @@ public class ProjectSecurityConfig extends WebSecurityConfigurerAdapter {
 			.antMatchers("/contact").permitAll()
 			.and().csrf().disable()
 			.oauth2ResourceServer().jwt().jwtAuthenticationConverter(jwtAuthenticationConverter);
-		
-		/**
-		 * This configuration is needed to view the /h2-console with out any issues.
-		 * Since H2 Console uses frames to display the UI, we need to allow the frames.
-		 * Otherwise since by default Spring Security consider X-Frame-Options: DENY
-		 * to avoid Clickjacking attacks, the /h2-console will not work properly.
-		 * More details can be found at 
-		 * https://docs.spring.io/spring-security/site/docs/5.0.x/reference/html/headers.html#headers-frame-options
-		 */
+
 		http.headers().frameOptions().sameOrigin();
 
 	}
