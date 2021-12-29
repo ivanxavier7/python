@@ -1,6 +1,5 @@
 DROP TABLE IF EXISTS accounts;
 DROP TABLE IF EXISTS account_transactions;
-DROP TABLE IF EXISTS loans;
 DROP TABLE IF EXISTS cards;
 DROP TABLE IF EXISTS notice_details;
 DROP TABLE IF EXISTS contact_messages;
