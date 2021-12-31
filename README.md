@@ -32,15 +32,36 @@ To run the project, follow this instructions:
 
 <img>
  
+ ```diff
+- text in red
++ text in green
+! text in orange
+# text in gray
+@@ text in purple (and bold)@@
+```
+
+ `` `json 
+ // código para colorir 
+` `` 
+ `` `html 
+ // código para colorir 
+ `` `
+` `` js 
+ // código para colorir 
+ `` `
+` `` css 
+ // código para colorir 
+ `` `
+ // etc. 
 
 
 Password encoders allow you to compare information stored in two separate sites, without being sent. For this, we use cryptographic hashing algorithms to generate a hash (summary) of the data. Salt allows you to generate different results for the same information. This process can be repeated several times (rounds) on each result, consuming a lot of resources, but increasing security from dictionary attacks drastically.
 ```html
-<span style="color: #f03c15">$2a$#f03c15</span><span style="color: darkgreen">06$</span><span style="color: darkorange">NkYh0RCM8pNWPaYvRLgN9.</span><span style="color: darkblue">LbJw4gcnWcOQYIom0P08UEZRQQjbfpy</span>
-<span style="color: #f03c15">Algorithm - $2a$</span>#f03c15
-<span style="color: #f03c15">Cost (Rounds) – 06$</span>
+<span style="color: crimson">$2a$</span><span style="color: darkgreen">06$</span><span style="color: darkorange">NkYh0RCM8pNWPaYvRLgN9.</span><span style="color: darkblue">LbJw4gcnWcOQYIom0P08UEZRQQjbfpy</span>
+<span style="color: crimson">Algorithm - $2a$</span>
+<span style="color: darkgreen">Cost (Rounds) – 06$</span>
 <span style="color: darkorange">Salt - NkYh0RCM8pNWPaYvRLgN9.</span>
-<span style="color: darkblue">#f03c15 Password Hash - LbJw4gcnWcOQYIom0P08UEZRQQjbfpy</span>
+<span style="color: darkblue">Password Hash - LbJw4gcnWcOQYIom0P08UEZRQQjbfpy</span>
 
 
 It is a cryptographic hash method, which maps variable-length data to fixed-length data with scattering algorithms.
@@ -48,7 +69,7 @@ It is a cryptographic hash method, which maps variable-length data to fixed-leng
 <span style="color: darkgreen">The rounds represent the cost, for example: If it is equal to 10, we have 2^10=1,024 iterations.</span>
 <span style="color: darkorange">Salt increases entropy, makes identical passwords produce different results.</span>
 <span style="color: darkblue">Finally we have the password hash.</span>
-```
+
 
 ---
 <span style="color: darkcyan">#Authentication and Authorization</span>
