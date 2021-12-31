@@ -12,6 +12,9 @@
 | 92441 | Ivan Xavier | ivanxavier@ua.pt |
 
 
+---
+
+
 ## Folder organization
 
 - **app_auth** -- contains the Web application with the extended authentication protocol, including instructions to run it. This represents the web page, running in a remote server.
@@ -24,8 +27,12 @@ To run the project, follow this instructions:
 - **1º:** Run [UAP](https://github.com/detiuaveiro/project-2---authentication-equipa_2/tree/master/uap)
 - **2º:** Run [APP_AUTH](https://github.com/detiuaveiro/project-2---authentication-equipa_2/tree/master/app_auth)
 
+---
+
+
 ## Deploy Diagram
 <img src="img/sio-project2-deploy-diagram.png">
+ALERTA - COLOCAR AQUI A INTRODUÇÃO, ESTE DIAGRAMA DEPOIS DE CORRIGIDO DEVE SER COLOCADO NO PKCE!
 
 
 # BCrypt
@@ -38,12 +45,18 @@ Salt allows you to generate different results for the same information.
 
 This process can be repeated several times (rounds) on each result, consuming a lot of resources, but increasing security from dictionary attacks drastically.
 
+
 <img src="img/hash-validation.png">
+
+
+
 
 
 It is a cryptographic hash method, which maps variable-length data to fixed-length data with scattering algorithms.
 
 <img src="img/password-hash.png">
+
+
 
 | Structure  |  Description |
 | --- | --- |
@@ -56,17 +69,12 @@ It is a cryptographic hash method, which maps variable-length data to fixed-leng
 
 During project development we used [Bcrypt-generator](https://bcrypt-generator.com/) to decrypt the password hash
 
+
 ---
 
+
+
 # Authentication and Authorization
-
-
-| Authentication  |  Authorization  |
-| --- | --- |
-|  Identifies users and gives access to the system  |  Authority of each user to access resources  |
-|  Authentication is done before authorization  |  Authorization is done after authentication  |
-|  Need User Credentials  |  Need the privileges and roles  |
-|  Identify the user in each action  |  Decide what actions the user can take  |
 
 
 - OpenID Connect is a protocol on top of the [OAuth 2.0](https://oauth.net/2/) framework that allows you to verify the identity of clients based on an authorization server, obtaining client and session information through an ID Token.
@@ -81,6 +89,15 @@ During project development we used [Bcrypt-generator](https://bcrypt-generator.c
 
 - With the increase of applications communicating with each other, this solution makes it easy to share data in a standard format.
 
+
+| Authentication  |  Authorization  |
+| --- | --- |
+|  Identifies users and gives access to the system  |  Authority of each user to access resources  |
+|  Authentication is done before authorization  |  Authorization is done after authentication  |
+|  Need User Credentials  |  Need the privileges and roles  |
+|  Identify the user in each action  |  Decide what actions the user can take  |
+
+
 ---
 
 
@@ -90,22 +107,28 @@ During project development we used [Bcrypt-generator](https://bcrypt-generator.c
 ## Cross-Origin Resource Sharing (CORS)
 It consists of blocking scripts by definition, which try to communicate with other domains.
 
+
 ## Cross-Site Request Forgery (CSRF)
 It consists of blocking requests that are destined for other domains.
 
-### Associated Attack Example
 
+### Associated Attack Example
 In an attack on an unprotected server, another user's session can be used to manipulate the communication, make a request for a password change and a form with auto-submit, destined for example to Facebook, in order to change the access credentials.
 It defends against malicious links that the attacker might create, such as a Facebook clone with a fake URL, as it checks if the redirect is valid.
 To access protected resources, the client must send a Token attached to each request, which is associated with the client's identity and will be validated by the authentication server. This process allows protection from CORS and CSRF attacks.
 
+
 ---
+
 
 # JWToken
 
+
 <img src="img/jwtoken-auth.png">
  
+
 This Token is normally generated during login, in the header it contains the algorithm and type, in the payload the information to be transmitted and in the end the signature, separations are made using the period (“.”) and it is encoded in BASE64.
+
 
 ## Benefits:
 - It implements JSON format, easy to use and is used in web requests.
@@ -113,25 +136,36 @@ This Token is normally generated during login, in the header it contains the alg
 - Allows you to maintain the Authorization/Authentication with all the information transferred in the payload.
 - It is a popular and well-documented implementation.
  
+
 ---
+
 
 # Signature:
 
+
 We signed the package with the HMAC in SHA256 of the package, where we send the header plus the payload with the secret:
+
 ```
 HMACSHA256(base64UrlEncode(header) + “.” + base64UrlEncode(payload), secret)
 ```
+
+
 Helps to maintain data integrity, when integrated with the private key, allows verifying the identity of the sender.
+
 
 During project development we used [JWT-IO](https://jwt.io/) to decrypt the password hash
 
+
 <img src="img/jwtoken-io.png">
+
 
 ---
 
 # Roles
 
+
 The authorizations of each user are isolated through “Roles”, it allows to check if a user can invoke a certain method, in the context of our application we use the roles “USER” and “ADMIN” to differentiate these permissions.
+
 
 | Endpoint |  Authorization  |
 | --- | --- |
@@ -142,11 +176,13 @@ The authorizations of each user are isolated through “Roles”, it allows to c
 
 
 ## Client Application
+ALERTA - FALAR DA APP CLIENTE, ANGULAR
 
 
 ## Authentication Server
 
 To approach the project itself and taking into account that a web application was needed to run the front-end, the development team decided to elaborate a new application with the authentication as priority, this application was developed using Angular framework, supporting Keycloak endpoints in order to connect to the Keycloak server and the resource server.
+
 
 First, the keycloak service is initialized using ```keycloak.init()```, like so:
 
@@ -155,6 +191,7 @@ First, the keycloak service is initialized using ```keycloak.init()```, like so:
 
 
 Using angular routing properties, when the login buttons are selected, there is a Login function that gets triggered, this function triggers the login function present in the keycloak object, like so:
+
 ```
   public login() {
     this.keycloak.login();
@@ -177,3 +214,4 @@ When the user is authenticated and redirected back to the app, the layout presen
 
 
 ## Resource Server
+ALERTA - FALAR DA APP RESOURCES, SPRING SECURITY
