@@ -38,8 +38,6 @@ Password encoders allow you to compare information stored in two separate sites,
 
 It is a cryptographic hash method, which maps variable-length data to fixed-length data with scattering algorithms.
 
-| Authentication  |  Authorization  |
-| --- | --- |
 |  Algorithm  |  We generate a string where we pass the algorithm used to generate the hash.  |
 |  Cost (Rounds)  |  The rounds represent the cost, for example: If it is equal to 10, we have 2^10=1,024 iterations.  |
 |  Salt  |  increases entropy, makes identical passwords produce different results.  |
@@ -51,7 +49,8 @@ It is a cryptographic hash method, which maps variable-length data to fixed-leng
 # Authentication and Authorization
 
 
-|  Authentication  |  Authorization  |
+| Authentication  |  Authorization  |
+| --- | --- |
 |  Identifies users and gives access to the system  |  Authority of each user to access resources  |
 |  Authentication is done before authorization  |  Authorization is done after authentication  |
 |  Need User Credentials  |  Need the privileges and roles  |
