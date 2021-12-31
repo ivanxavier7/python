@@ -49,9 +49,8 @@ It is a cryptographic hash method, which maps variable-length data to fixed-leng
 
 ---
 
-During project development we used Bcrypt-generator to decrypt the password hash
+During project development we used [Bcrypt-generator](https://bcrypt-generator.com/) to decrypt the password hash
 
-[Bcrypt-generator](https://bcrypt-generator.com/)
 
 
 # Authentication and Authorization
@@ -65,7 +64,7 @@ During project development we used Bcrypt-generator to decrypt the password hash
 |  Identify the user in each action  |  Decide what actions the user can take  |
 
 
-OpenID Connect is a protocol on top of the OAuth 2.0 framework that allows you to verify the identity of clients based on an authorization server, obtaining client and session information through an ID Token.
+OpenID Connect is a protocol on top of the [OAuth 2.0](https://oauth.net/2/) framework that allows you to verify the identity of clients based on an authorization server, obtaining client and session information through an ID Token.
 The intention is to create a standard to share the identity of clients between applications with encrypted information.
 OpenID sets scopes for openid, profile, email and address and exposes a new endpoint “/userinfo”
 The authentication provided by OpenID together with the authorizations of OAuth2.0 allow you to create an IAM(Identity and Access Management) system.
@@ -92,7 +91,7 @@ To access protected resources, the client must send a Token attached to each req
 
 # JWToken
 
-<img>
+<img src="img/jwtoken-auth.png">
  
 This Token is normally generated during login, in the header it contains the algorithm and type, in the payload the information to be transmitted and in the end the signature, separations are made using the period (“.”) and it is encoded in BASE64.
 
@@ -101,7 +100,6 @@ This Token is normally generated during login, in the header it contains the alg
 ⋅⋅*As we don't use cookies, we don't need protection against CSRF attacks.
 ⋅⋅*Allows you to maintain the Authorization/Authentication with all the information transferred in the payload.
 ⋅⋅*It is a popular and well-documented implementation.
-<img>
  
 ---
 
@@ -112,6 +110,10 @@ We signed the package with the HMAC in SHA256 of the package, where we send the 
 HMACSHA256(base64UrlEncode(header) + “.” + base64UrlEncode(payload), secret)
 ```
 Helps to maintain data integrity, when integrated with the private key, allows verifying the identity of the sender.
+
+During project development we used [JWT-IO](https://jwt.io/) to decrypt the password hash
+
+<img src="img/jwtoken-io.png">
 
 ---
 
@@ -127,10 +129,10 @@ The authorizations of each user are isolated through “Roles”, it allows to c
 
 
 
+## Client Application
 
 
-
-## Web Application Implementation
+## Authentication Server
 
 To approach the project itself and taking into account that a web application was needed to run the front-end, the development team decided to elaborate a new application with the authentication as priority, this application was developed using Angular framework, supporting Keycloak endpoints in order to connect to the Keycloak server and the resource server.
 
@@ -162,3 +164,4 @@ When the user is authenticated and redirected back to the app, the layout presen
 <img src="img/cond1.png"/>
 
 
+## Resource Server
