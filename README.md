@@ -33,23 +33,17 @@ To run the project, follow this instructions:
 <img>
 
 Password encoders allow you to compare information stored in two separate sites, without being sent. For this, we use cryptographic hashing algorithms to generate a hash (summary) of the data. Salt allows you to generate different results for the same information. This process can be repeated several times (rounds) on each result, consuming a lot of resources, but increasing security from dictionary attacks drastically.
-```diff
-- $2a$ 
-+ 06$
-# NkYh0RCM8pNWPaYvRLgN9.
-! LbJw4gcnWcOQYIom0P08UEZRQQjbfpy
-- Algorithm - $2a$
-+ Cost (Rounds) – 06$
-# Salt - NkYh0RCM8pNWPaYvRLgN9.
-! Password Hash - LbJw4gcnWcOQYIom0P08UEZRQQjbfpy
 
+<img token>
 
 It is a cryptographic hash method, which maps variable-length data to fixed-length data with scattering algorithms.
-- We generate a string where we pass the algorithm used to generate the hash.
-+ The rounds represent the cost, for example: If it is equal to 10, we have 2^10=1,024 iterations.
-# Salt increases entropy, makes identical passwords produce different results.
-! Finally we have the password hash.
 
+| Authentication  |  Authorization  |
+| --- | --- |
+|  Algorithm  |  We generate a string where we pass the algorithm used to generate the hash.  |
+|  Cost (Rounds)  |  The rounds represent the cost, for example: If it is equal to 10, we have 2^10=1,024 iterations.  |
+|  Salt  |  increases entropy, makes identical passwords produce different results.  |
+|  Password Hash  |  Finally we have the password hash.  |
 
 ---
 
