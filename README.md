@@ -32,9 +32,12 @@ To run the project, follow this instructions:
 
 <img>
 
+Password encoders allow you to compare information stored in two separate sites, without being sent. For this, we use cryptographic hashing algorithms to generate a hash (summary) of the data.
+Salt allows you to generate different results for the same information.
+This process can be repeated several times (rounds) on each result, consuming a lot of resources, but increasing security from dictionary attacks drastically.
+
 <img src="img/hash-validation.png">
 
-Password encoders allow you to compare information stored in two separate sites, without being sent. For this, we use cryptographic hashing algorithms to generate a hash (summary) of the data. Salt allows you to generate different results for the same information. This process can be repeated several times (rounds) on each result, consuming a lot of resources, but increasing security from dictionary attacks drastically.
 
 It is a cryptographic hash method, which maps variable-length data to fixed-length data with scattering algorithms.
 
@@ -47,11 +50,11 @@ It is a cryptographic hash method, which maps variable-length data to fixed-leng
 |  Salt  |  Increases entropy, makes identical passwords produce different results.  |
 |  Password Hash  |  Finally we have the password hash.  |
 
----
+
 
 During project development we used [Bcrypt-generator](https://bcrypt-generator.com/) to decrypt the password hash
 
-
+---
 
 # Authentication and Authorization
 
@@ -65,10 +68,15 @@ During project development we used [Bcrypt-generator](https://bcrypt-generator.c
 
 
 OpenID Connect is a protocol on top of the [OAuth 2.0](https://oauth.net/2/) framework that allows you to verify the identity of clients based on an authorization server, obtaining client and session information through an ID Token.
+
 The intention is to create a standard to share the identity of clients between applications with encrypted information.
-OpenID sets scopes for openid, profile, email and address and exposes a new endpoint “/userinfo”
+
+OpenID sets scopes for openid, profile, email and address and exposes a new endpoint “/userinfo”.
+
 The authentication provided by OpenID together with the authorizations of OAuth2.0 allow you to create an IAM(Identity and Access Management) system.
+
 Structure and processes of administration and management of resources, responsible for the rights, privileges and groups of members.
+
 With the increase of applications communicating with each other, this solution makes it easy to share data in a standard format.
 
 ---
@@ -83,6 +91,8 @@ It consists of blocking scripts by definition, which try to communicate with oth
 ## Cross-Site Request Forgery (CSRF)
 It consists of blocking requests that are destined for other domains.
 
+### Associated Attack Example
+
 In an attack on an unprotected server, another user's session can be used to manipulate the communication, make a request for a password change and a form with auto-submit, destined for example to Facebook, in order to change the access credentials.
 It defends against malicious links that the attacker might create, such as a Facebook clone with a fake URL, as it checks if the redirect is valid.
 To access protected resources, the client must send a Token attached to each request, which is associated with the client's identity and will be validated by the authentication server. This process allows protection from CORS and CSRF attacks.
@@ -96,10 +106,10 @@ To access protected resources, the client must send a Token attached to each req
 This Token is normally generated during login, in the header it contains the algorithm and type, in the payload the information to be transmitted and in the end the signature, separations are made using the period (“.”) and it is encoded in BASE64.
 
 ## Benefits:
-⋅⋅*It implements JSON format, easy to use and is used in web requests.
-⋅⋅*As we don't use cookies, we don't need protection against CSRF attacks.
-⋅⋅*Allows you to maintain the Authorization/Authentication with all the information transferred in the payload.
-⋅⋅*It is a popular and well-documented implementation.
+- It implements JSON format, easy to use and is used in web requests.
+- As we don't use cookies, we don't need protection against CSRF attacks.
+- Allows you to maintain the Authorization/Authentication with all the information transferred in the payload.
+- It is a popular and well-documented implementation.
  
 ---
 
