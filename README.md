@@ -146,3 +146,5 @@ This itself works as barrier to protect the users credentials, since these are n
 When the user is authenticated and redirected back to the app, the layout presented to him changes, presenting him with the user pages that he can now access, this was implemented using angular if conditions, verifying if the user is authenticated, like so:
 
 <img src="img/cond1.png"/>
+
+
