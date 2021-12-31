@@ -38,7 +38,7 @@ Password encoders allow you to compare information stored in two separate sites,
 
 It is a cryptographic hash method, which maps variable-length data to fixed-length data with scattering algorithms.
 
-| Authentication  |  Authorization  |
+| Structure  |  Definition |
 | --- | --- |
 |  Algorithm  |  We generate a string where we pass the algorithm used to generate the hash.  |
 |  Cost (Rounds)  |  The rounds represent the cost, for example: If it is equal to 10, we have 2^10=1,024 iterations.  |
@@ -72,15 +72,16 @@ With the increase of applications communicating with each other, this solution m
 # CORS and CSRF
 
 
-##Cross-Origin Resource Sharing (CORS)
+## Cross-Origin Resource Sharing (CORS)
 It consists of blocking scripts by definition, which try to communicate with other domains.
 
-##Cross-Site Request Forgery (CSRF)
+## Cross-Site Request Forgery (CSRF)
 It consists of blocking requests that are destined for other domains.
 
 In an attack on an unprotected server, another user's session can be used to manipulate the communication, make a request for a password change and a form with auto-submit, destined for example to Facebook, in order to change the access credentials.
 It defends against malicious links that the attacker might create, such as a Facebook clone with a fake URL, as it checks if the redirect is valid.
 To access protected resources, the client must send a Token attached to each request, which is associated with the client's identity and will be validated by the authentication server. This process allows protection from CORS and CSRF attacks.
+
 ---
 # JWToken
 
@@ -88,7 +89,7 @@ To access protected resources, the client must send a Token attached to each req
  
 This Token is normally generated during login, in the header it contains the algorithm and type, in the payload the information to be transmitted and in the end the signature, separations are made using the period (“.”) and it is encoded in BASE64.
 
-##Benefits:
+## Benefits:
 ⋅⋅*It implements JSON format, easy to use and is used in web requests.
 ⋅⋅*As we don't use cookies, we don't need protection against CSRF attacks.
 ⋅⋅*Allows you to maintain the Authorization/Authentication with all the information transferred in the payload.
@@ -103,6 +104,7 @@ We signed the package with the HMAC in SHA256 of the package, where we send the 
 HMACSHA256(base64UrlEncode(header) + “.” + base64UrlEncode(payload), secret)
 ```
 Helps to maintain data integrity, when integrated with the private key, allows verifying the identity of the sender.
+
 ---
 
 # Roles
