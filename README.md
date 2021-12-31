@@ -33,11 +33,11 @@ To run the project, follow this instructions:
 <img>
  
 Password encoders allow you to compare information stored in two separate sites, without being sent. For this, we use cryptographic hashing algorithms to generate a hash (summary) of the data. Salt allows you to generate different results for the same information. This process can be repeated several times (rounds) on each result, consuming a lot of resources, but increasing security from dictionary attacks drastically.
-<span style="color: crimson">$2a$</span><span style="color: darkgreen">06$</span><span style="color: darkorange">NkYh0RCM8pNWPaYvRLgN9.</span><span style="color: darkblue">LbJw4gcnWcOQYIom0P08UEZRQQjbfpy</span>
+<span font="color: crimson">$2a$</span><span style="color: darkgreen">06$</span><span style="color: darkorange">NkYh0RCM8pNWPaYvRLgN9.</span><span style="color: darkblue">LbJw4gcnWcOQYIom0P08UEZRQQjbfpy</span>
 <span style="color: crimson">Algorithm - $2a$</span>
 <span style="color: darkgreen">Cost (Rounds) – 06$</span>
-<span style="color: darkorange">Salt - NkYh0RCM8pNWPaYvRLgN9.</span>
-<span style="color: darkblue">Password Hash - LbJw4gcnWcOQYIom0P08UEZRQQjbfpy</span>
+<span style="color: red">Salt - NkYh0RCM8pNWPaYvRLgN9.</span>
+<span font="color: red">Password Hash - LbJw4gcnWcOQYIom0P08UEZRQQjbfpy</span>
 
 
 It is a cryptographic hash method, which maps variable-length data to fixed-length data with scattering algorithms.
