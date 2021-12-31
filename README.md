@@ -28,7 +28,7 @@ To run the project, follow this instructions:
 <img src="img/sio-project2-deploy-diagram.png">
 
 
-<span style="color: darkcyan">#BCrypt</span>
+# BCrypt
 
 <img>
 
@@ -66,6 +66,7 @@ OpenID sets scopes for openid, profile, email and address and exposes a new endp
 The authentication provided by OpenID together with the authorizations of OAuth2.0 allow you to create an IAM(Identity and Access Management) system.
 Structure and processes of administration and management of resources, responsible for the rights, privileges and groups of members.
 With the increase of applications communicating with each other, this solution makes it easy to share data in a standard format.
+
 ---
 
 
