@@ -32,7 +32,7 @@ To run the project, follow this instructions:
 
 ## Deploy Diagram
 <img src="img/sio-project2-deploy-diagram.png">
-ALERTA - COLOCAR AQUI A INTRODUÇÃO, ESTE DIAGRAMA DEPOIS DE CORRIGIDO DEVE SER COLOCADO NO PKCE!
+ALERTA - COLOCAR AQUI A INTRODUÇÃO, ESTE DIAGRAMA DEPOIS DE CORRIGIDO, DEVE SER COLOCADO NO PKCE!
 
 
 # BCrypt
