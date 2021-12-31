@@ -33,7 +33,9 @@ To run the project, follow this instructions:
 <img>
 
 Password encoders allow you to compare information stored in two separate sites, without being sent. For this, we use cryptographic hashing algorithms to generate a hash (summary) of the data.
+
 Salt allows you to generate different results for the same information.
+
 This process can be repeated several times (rounds) on each result, consuming a lot of resources, but increasing security from dictionary attacks drastically.
 
 <img src="img/hash-validation.png">
@@ -67,17 +69,17 @@ During project development we used [Bcrypt-generator](https://bcrypt-generator.c
 |  Identify the user in each action  |  Decide what actions the user can take  |
 
 
-OpenID Connect is a protocol on top of the [OAuth 2.0](https://oauth.net/2/) framework that allows you to verify the identity of clients based on an authorization server, obtaining client and session information through an ID Token.
+- OpenID Connect is a protocol on top of the [OAuth 2.0](https://oauth.net/2/) framework that allows you to verify the identity of clients based on an authorization server, obtaining client and session information through an ID Token.
 
-The intention is to create a standard to share the identity of clients between applications with encrypted information.
+- The intention is to create a standard to share the identity of clients between applications with encrypted information.
 
-OpenID sets scopes for openid, profile, email and address and exposes a new endpoint “/userinfo”.
+- OpenID sets scopes for openid, profile, email and address and exposes a new endpoint “/userinfo”.
 
-The authentication provided by OpenID together with the authorizations of OAuth2.0 allow you to create an IAM(Identity and Access Management) system.
+- The authentication provided by OpenID together with the authorizations of OAuth2.0 allow you to create an IAM(Identity and Access Management) system.
 
-Structure and processes of administration and management of resources, responsible for the rights, privileges and groups of members.
+- Structure and processes of administration and management of resources, responsible for the rights, privileges and groups of members.
 
-With the increase of applications communicating with each other, this solution makes it easy to share data in a standard format.
+- With the increase of applications communicating with each other, this solution makes it easy to share data in a standard format.
 
 ---
 
