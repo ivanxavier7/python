@@ -31,48 +31,30 @@ To run the project, follow this instructions:
 <span style="color: darkcyan">#BCrypt</span>
 
 <img>
- 
- ```diff
-- text in red
-+ text in green
-! text in orange
-# text in gray
-@@ text in purple (and bold)@@
-```
-
- `` `json 
- // código para colorir 
-` `` 
- `` `html 
- // código para colorir 
- `` `
-` `` js 
- // código para colorir 
- `` `
-` `` css 
- // código para colorir 
- `` `
- // etc. 
-
 
 Password encoders allow you to compare information stored in two separate sites, without being sent. For this, we use cryptographic hashing algorithms to generate a hash (summary) of the data. Salt allows you to generate different results for the same information. This process can be repeated several times (rounds) on each result, consuming a lot of resources, but increasing security from dictionary attacks drastically.
-```html
-<span style="color: crimson">$2a$</span><span style="color: darkgreen">06$</span><span style="color: darkorange">NkYh0RCM8pNWPaYvRLgN9.</span><span style="color: darkblue">LbJw4gcnWcOQYIom0P08UEZRQQjbfpy</span>
-<span style="color: crimson">Algorithm - $2a$</span>
-<span style="color: darkgreen">Cost (Rounds) – 06$</span>
-<span style="color: darkorange">Salt - NkYh0RCM8pNWPaYvRLgN9.</span>
-<span style="color: darkblue">Password Hash - LbJw4gcnWcOQYIom0P08UEZRQQjbfpy</span>
+```diff
+- $2a$ 
++ 06$
+# NkYh0RCM8pNWPaYvRLgN9.
+! LbJw4gcnWcOQYIom0P08UEZRQQjbfpy
+- Algorithm - $2a$
++ Cost (Rounds) – 06$
+# Salt - NkYh0RCM8pNWPaYvRLgN9.
+! Password Hash - LbJw4gcnWcOQYIom0P08UEZRQQjbfpy
 
 
 It is a cryptographic hash method, which maps variable-length data to fixed-length data with scattering algorithms.
-<span style="color: crimson">We generate a string where we pass the algorithm used to generate the hash.</span>
-<span style="color: darkgreen">The rounds represent the cost, for example: If it is equal to 10, we have 2^10=1,024 iterations.</span>
-<span style="color: darkorange">Salt increases entropy, makes identical passwords produce different results.</span>
-<span style="color: darkblue">Finally we have the password hash.</span>
+- We generate a string where we pass the algorithm used to generate the hash.
++ The rounds represent the cost, for example: If it is equal to 10, we have 2^10=1,024 iterations.
+# Salt increases entropy, makes identical passwords produce different results.
+! Finally we have the password hash.
 
 
 ---
-<span style="color: darkcyan">#Authentication and Authorization</span>
+
+
+# Authentication and Authorization
 
 
 | Authentication  |  Authorization  |
@@ -91,7 +73,9 @@ The authentication provided by OpenID together with the authorizations of OAuth2
 Structure and processes of administration and management of resources, responsible for the rights, privileges and groups of members.
 With the increase of applications communicating with each other, this solution makes it easy to share data in a standard format.
 ---
-<span style="color: darkcyan">#CORS and CSRF</span>
+
+
+# CORS and CSRF
 
 
 ##Cross-Origin Resource Sharing (CORS)
@@ -104,11 +88,12 @@ In an attack on an unprotected server, another user's session can be used to man
 It defends against malicious links that the attacker might create, such as a Facebook clone with a fake URL, as it checks if the redirect is valid.
 To access protected resources, the client must send a Token attached to each request, which is associated with the client's identity and will be validated by the authentication server. This process allows protection from CORS and CSRF attacks.
 ---
-<span style="color: darkcyan">#JWToken</span>
+# JWToken
 
 <img>
  
 This Token is normally generated during login, in the header it contains the algorithm and type, in the payload the information to be transmitted and in the end the signature, separations are made using the period (“.”) and it is encoded in BASE64.
+
 ##Benefits:
 ⋅⋅*It implements JSON format, easy to use and is used in web requests.
 ⋅⋅*As we don't use cookies, we don't need protection against CSRF attacks.
@@ -125,7 +110,8 @@ HMACSHA256(base64UrlEncode(header) + “.” + base64UrlEncode(payload), secret)
 ```
 Helps to maintain data integrity, when integrated with the private key, allows verifying the identity of the sender.
 ---
-<span style="color: darkcyan">#Roles</span>
+
+# Roles
 
 The authorizations of each user are isolated through “Roles”, it allows to check if a user can invoke a certain method, in the context of our application we use the roles “USER” and “ADMIN” to differentiate these permissions.
 
