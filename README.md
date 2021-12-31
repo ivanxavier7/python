@@ -51,8 +51,6 @@ It is a cryptographic hash method, which maps variable-length data to fixed-leng
 # Authentication and Authorization
 
 
-| Authentication  |  Authorization  |
-| --- | --- |
 |  Authentication  |  Authorization  |
 |  Identifies users and gives access to the system  |  Authority of each user to access resources  |
 |  Authentication is done before authorization  |  Authorization is done after authentication  |
