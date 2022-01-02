@@ -1,0 +1,68 @@
+<!--<app-header></app-header>-->
+<div class="card-body col-md-5 mb-3 mt-5 card mx-auto text-center">
+  <h3 class="global-title text-center">Contacts</h3>
+  <div class="d-grid contact-view">
+    <div class="cont-details">
+      <div class="cont-top">
+        <div class="cont-left text-center">
+          <span class="fa fa-phone" style="color: blue"></span>
+        </div>
+        <div class="cont-right">
+          <h6>Telefone</h6>
+          <p><a href="tel:+456 68 925 89">+456 68 925 89</a></p>
+        </div>
+      </div>
+      <div class="cont-top margin-up">
+        <div class="cont-left text-center">
+          <span class="fa fa-envelope-o" style="color: blue"></span>
+        </div>
+        <div class="cont-right">
+          <h6>Email</h6>
+          <p><a href="" class="mail">auth_app@app_auth.com</a></p>
+        </div>
+      </div>
+      <div class="cont-top margin-up">
+        <div class="cont-left text-center">
+          <span class="fa fa-map-marker" style="color: blue"></span>
+        </div>
+        <div class="cont-right">
+          <h6>Adress</h6>
+          <p>123 Rua principal, Maldivas, Md 10030</p>
+        </div>
+      </div>
+      <div class="card card-body">
+
+          <form (ngSubmit)="contactForm.valid && saveMessage(contactForm)" #contactForm="ngForm">
+            <div class=" mb-3">
+              <input type="text" class="form-control" name="contactName" id="contactName" placeholder="Name" required
+                     [(ngModel)]="model.contactName" #contactName="ngModel">
+              <span class="text-danger" *ngIf="(contactName.touched || contactForm.submitted) &&
+              contactName.errors?.['required']">Incorrect name</span>
+            </div>
+            <div class=" mb-3">
+              <input type="email" class="form-control" name="contactEmail" id="contactEmail" placeholder="Email"
+                     required pattern="^[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$" [(ngModel)]="model.contactEmail"
+                     #contactEmail="ngModel">
+              <span class="text-danger" *ngIf="(contactEmail.touched || contactForm.submitted) &&
+                contactEmail.errors?.['required']">Error : Email is required !</span>
+              <span class="text-danger" *ngIf="(contactEmail.touched || contactForm.submitted) &&
+              contactEmail.errors?.['pattern']">Incorrect email</span>
+            </div>
+            <div class=" mb-3">
+              <input type="text" class="form-control" name="subject" id="subject" placeholder="Subject" required
+                     [(ngModel)]="model.subject" #subject="ngModel">
+              <span class="text-danger" *ngIf="(subject.touched || contactForm.submitted) &&
+              subject.errors?.['required']">Incorrect subject</span>
+            </div>
+            <div class=" mb-3">
+              <textarea name="message" class="form-control" id="message" placeholder="Message" required
+                        [(ngModel)]="model.message" #message="ngModel">></textarea>
+              <span class="text-danger" *ngIf="(message.touched || contactForm.submitted) &&
+            message.errors?.['required']">Incorrect message</span>
+            </div>
+            <button type="submit" class="btn btn-primary">Send</button>
+          </form>
+        </div>
+      </div>
+    </div>
+</div>
