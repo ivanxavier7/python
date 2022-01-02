@@ -26,8 +26,8 @@
 
 ## Instructions to run the project
 To run the project, follow this instructions:
-- **1º:** Run [UAP](https://github.com/detiuaveiro/project-2---authentication-equipa_2/tree/master/uap)
-- **2º:** Run [APP_AUTH](https://github.com/detiuaveiro/project-2---authentication-equipa_2/tree/master/app_auth)
+- **1º:** Run [UAP](https://github.com/ivanxavier7/python/tree/main/backup/uap)
+- **2º:** Run [APP_AUTH](https://github.com/ivanxavier7/python/tree/main/backup/app_auth)
 <br />
 
 ---
