@@ -15,7 +15,10 @@ timmy = Turtle()
 my_screen = Screen()
 my_screen.colormode(255)
 
+rgb_colors = []
+
 for color in colors:
+    rgb_colors.append(color)
     r = color.rgb.r
     g = color.rgb.g
     b = color.rgb.b
